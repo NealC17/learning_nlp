@@ -1,8 +1,6 @@
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 
-DIM = 2048
-
 df = pd.read_csv("IMDB.csv")
 df['label'] = 1
 df.loc[df['sentiment'] == 'negative', 'label'] = 0
@@ -11,7 +9,7 @@ df['review_clean'] = df['review'].str.replace(r'<.*?>', ' ', regex=True)
 vectorizer = TfidfVectorizer(
     lowercase=True,
     stop_words='english',
-    max_features=DIM,
+    max_features=20000,
     min_df=5,
     max_df=0.9,
     ngram_range=(1, 2)
