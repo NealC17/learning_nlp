@@ -1,3 +1,5 @@
 .venv/
 .idea/
 vision_transformer/mnist_test_seq.npy
+vision_transformer/wandb
+vision_transformer/best_moving_mnist_model.pt
